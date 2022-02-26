@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.AddRecipeFragment">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add your own recipe"
+        android:textSize="@dimen/_20sdp"
+        android:fontFamily="@font/myfont"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/add_header"
+        android:textColor="@color/dark_wine"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add the name of your meal"
+        android:textColor="@color/light_wine"
+        android:textSize="@dimen/_15sdp"
+        android:fontFamily="@font/myfont"
+        app:layout_constraintTop_toBottomOf="@id/add_header"
+        android:id="@+id/tv_add_meal_name"
+        android:layout_margin="16dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_add_meal_name"
+        android:hint="Your meal name..."
+        android:id="@+id/et_add_meal_name"
+        android:layout_margin="16dp"
+        android:inputType="textMultiLine"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add the category of your meal"
+        android:textColor="@color/dirty_pink"
+        android:textSize="@dimen/_15sdp"
+        android:fontFamily="@font/myfont"
+        app:layout_constraintTop_toBottomOf="@id/et_add_meal_name"
+        android:id="@+id/tv_add_category_name"
+        android:layout_margin="16dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_add_category_name"
+        android:hint="Category..."
+        android:id="@+id/et_add_category_name"
+        android:layout_margin="16dp"
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add ingredients"
+        android:textColor="@color/darker_orange"
+        android:textSize="@dimen/_15sdp"
+        android:fontFamily="@font/myfont"
+        app:layout_constraintTop_toBottomOf="@id/et_add_category_name"
+        android:id="@+id/tv_add_ingredients"
+        android:layout_margin="16dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_add_ingredients"
+        android:hint="ex. Apples (2 large)"
+        android:id="@+id/et_add_ingredients"
+        android:layout_margin="16dp"
+        android:inputType="textMultiLine"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How to make it?"
+        android:textColor="@color/lighter_orange"
+        android:textSize="@dimen/_15sdp"
+        android:fontFamily="@font/myfont"
+        app:layout_constraintTop_toBottomOf="@id/et_add_ingredients"
+        android:id="@+id/tv_add_instructions"
+        android:layout_margin="16dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_add_instructions"
+        android:hint="Your instructions..."
+        android:id="@+id/et_add_instructions"
+        android:layout_margin="16dp"
+        android:inputType="textMultiLine"/>
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Add recipe"
+        app:layout_constraintTop_toBottomOf="@id/et_add_instructions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        android:id="@+id/add_recipe_button"
+        android:background= "@drawable/light_to_dark_orange_gradient"
+        android:textColor="@color/white"
+        android:elegantTextHeight="true"
+
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

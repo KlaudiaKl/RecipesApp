@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.foodie.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.example.foodie.fragments.FavouritesFragment"
+        android:label="fragment_favourites"
+        tools:layout="@layout/fragment_favourites" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.foodie.fragments.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.example.foodie.fragments.RecipesFragment"
+        android:label="fragment_recipes"
+        tools:layout="@layout/fragment_recipes">
+        <action
+            android:id="@+id/action_recipesFragment_to_addRecipeFragment"
+            app:destination="@id/addRecipeFragment" />
+        <action
+            android:id="@+id/action_recipesFragment_to_ownRecipeDetailsFragment"
+            app:destination="@id/ownRecipeDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRecipeFragment"
+        android:name="com.example.foodie.fragments.AddRecipeFragment"
+        android:label="fragment_add_recipe"
+        tools:layout="@layout/fragment_add_recipe" >
+        <action
+            android:id="@+id/action_addRecipeFragment_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+        <action
+            android:id="@+id/action_addRecipeFragment_to_recipesFragment2"
+            app:destination="@id/recipesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateOwnRecipeFragment"
+        android:name="com.example.foodie.fragments.UpdateOwnRecipeFragment"
+        android:label="fragment_update_own_recipe"
+        tools:layout="@layout/fragment_update_own_recipe" >
+        <argument
+            android:name="ownRecipe"
+            app:argType="com.example.foodie.DB.dataclasses.OwnRecipe" />
+        <action
+            android:id="@+id/action_updateOwnRecipeFragment_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ownRecipeDetailsFragment"
+        android:name="com.example.foodie.fragments.OwnRecipeDetailsFragment"
+        android:label="fragment_own_recipe_details"
+        tools:layout="@layout/fragment_own_recipe_details" >
+        <action
+            android:id="@+id/action_ownRecipeDetailsFragment_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+        <argument
+            android:name="ownRecipe"
+            app:argType="com.example.foodie.DB.dataclasses.OwnRecipe" />
+        <action
+            android:id="@+id/action_ownRecipeDetailsFragment_to_updateOwnRecipeFragment"
+            app:destination="@id/updateOwnRecipeFragment" />
+    </fragment>
+</navigation>

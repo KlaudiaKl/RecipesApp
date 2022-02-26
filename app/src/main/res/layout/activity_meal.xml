@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout"
+    tools:context=".MealActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_230sdp"
+        android:id="@+id/app_bar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/collapsing_tool_bar"
+            app:contentScrim="@color/purple_700"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="Meal name">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/meal_image"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"/>
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_collapseMode="pin"
+                android:id="@+id/meal_name_toolbar"/>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/floating_add_to_fav"
+        android:src="@drawable/ic_favourite"
+        app:backgroundTint="@color/purple_500"
+        app:tint="@color/white"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"/>
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:indicatorColor="@color/purple_700"
+        android:indeterminate="true"
+        android:id="@+id/indicator"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom"
+        android:visibility="gone"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/linear_l"
+        android:layout_marginTop="8dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cv_category"
+            app:cardCornerRadius="16dp"
+            android:backgroundTint="@color/purple_200"
+            android:layout_margin="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/myfont"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                                android:id="@+id/tv_details_cat"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cv_area"
+            app:cardCornerRadius="16dp"
+            android:backgroundTint="@color/purple_200"
+            android:layout_margin="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Area"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/myfont"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:id="@+id/tv_details_area"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingredients: "
+        android:id="@+id/ingredients_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_l"
+        android:fontFamily="@font/myfont"
+        android:textSize="@dimen/_20ssp"
+        android:layout_margin="8dp"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredients_header"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="8dp"
+        android:id="@+id/ingredients_card">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bla bla blaahh "
+        android:id="@+id/ingredients"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredients_header"
+        android:fontFamily="@font/myfont"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bla bla blaahh "
+        android:id="@+id/measures"
+        app:layout_constraintStart_toEndOf="@id/ingredients"
+        app:layout_constraintTop_toBottomOf="@+id/ingredients_header"
+        android:fontFamily="@font/myfont"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="textEnd"/>
+    </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How to make it: "
+            android:id="@+id/instructions_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ingredients_card"
+            android:fontFamily="@font/myfont"
+            android:textSize="@dimen/_20ssp"
+            android:layout_margin="8dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bla bla blaahh "
+        android:id="@+id/instructions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructions_header"
+        android:fontFamily="@font/myfont"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="More from category: "
+        android:id="@+id/more_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructions"
+        android:fontFamily="@font/myfont"
+        android:textSize="@dimen/_20ssp"
+        android:layout_margin="8dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/more_header"
+        android:id="@+id/more_recycler"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
